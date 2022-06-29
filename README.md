@@ -29,6 +29,9 @@ Acceptance tests can be conducted in a browser using tools like Cypress or Selen
 RTL recommends finding elements by accessibility handles.
 [testing-library](https://testing-library.com/docs/queries/about/)
 
+When following this philosophy we often want to find items by role. To find an item by it's role we must know the role definition to look for.
+[role-definitions](https://www.w3.org/TR/wai-aria/#role_definitions)
+
 # jest-dom
 
 The jest dom comes with create-react-app. Jest-dom imports the setupTests.js file before running each test, ensuring matchers are available. These matchers are DOM based matchers, even if you have conducted unit testing before it is likely you have never seen this methodology, this is because these matchers are checking against a virtual DOM which is a concept specific to React.
