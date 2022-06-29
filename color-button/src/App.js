@@ -4,25 +4,28 @@ import { useState } from 'react';
 function App() {
 
   const [buttonColor, setButtonColor] = useState('red');
-  const [checkedState, setCheckedState] = useState('unchecked');
+  const [disabled, setDisabled] = useState(false);
 
   const newButtonColor = buttonColor === 'red' ? 'blue' : 'red';
-
-  const handleToggleCheckbox = () => {
-    setCheckedState(checkedState === 'unchecked' ? 'checked' : 'unchecked');
-  }
 
   return (
     <div className="App">
       <button
-        disabled={checkedState !== 'unchecked'}
-        style={{ backgroundColor: `${buttonColor}` }}
+        disabled={disabled}
+        aria-disabled={disabled}
+        style={{ backgroundColor: `${buttonColor}`, color: 'white' }}
         onClick={() => setButtonColor(newButtonColor)}
       >
         Change to {newButtonColor}
       </button>
 
-      <input type="checkbox" onChange={handleToggleCheckbox}/>
+      <input
+        type="checkbox"
+        id="enable-button-checkbox"
+        onChange={e => setDisabled(e.target.checked)}
+        defaultChecked={disabled}
+        aria-checked={disabled}
+        />
     </div>
   );
 }
