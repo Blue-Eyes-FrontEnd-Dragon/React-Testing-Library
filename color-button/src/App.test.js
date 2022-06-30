@@ -32,7 +32,7 @@ test('button toggles disabled on checkbox select', () => {
 
   const button = screen.getByRole('button', { name: 'Change to blue' });
 
-  const checkbox =screen.getByRole('checkbox');
+  const checkbox = screen.getByRole('checkbox', { name: 'Disable button' });
 
   fireEvent.click(checkbox);
 
