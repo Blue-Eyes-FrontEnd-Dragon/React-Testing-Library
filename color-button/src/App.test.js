@@ -44,3 +44,25 @@ test('button toggles disabled on checkbox select', () => {
 
   expect(button).toBeEnabled();
 });
+
+test('button turns grey when disabled', () => {
+  render(<App />);
+
+  const button = screen.getByRole('button', { name: 'Change to blue' });
+
+  const checkbox = screen.getByRole('checkbox', { name: 'Disable button' });
+
+  expect(button).toHaveStyle({ backgroundColor: 'red' });
+
+  fireEvent.click(checkbox);
+
+  expect(button).toHaveStyle({ backgroundColor: 'grey' });
+
+  fireEvent.click(checkbox);
+
+  expect(button).toHaveStyle({ backgroundColor: 'red' });
+
+  fireEvent.click(button);
+
+  expect(button).toHaveStyle({ backgroundColor: 'blue' });
+});

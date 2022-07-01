@@ -13,7 +13,9 @@ function App() {
       <button
         disabled={disabled}
         aria-disabled={disabled}
-        style={{ backgroundColor: `${buttonColor}`, color: 'white' }}
+        style={disabled ?
+          { backgroundColor: 'grey', color: 'white'} :
+          { backgroundColor: `${buttonColor}`, color: 'white' }}
         onClick={() => setButtonColor(newButtonColor)}
       >
         Change to {newButtonColor}
