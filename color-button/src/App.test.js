@@ -5,21 +5,21 @@ import App from './App';
 test('button turns blue when clicked', () => {
   render(<App />);
 
-  const button = screen.getByRole('button', { name: 'Change to blue' });
+  const button = screen.getByRole('button', { name: 'Change to MidnightBlue' });
 
-  expect(button).toHaveStyle({ backgroundColor: 'red' });
+  expect(button).toHaveStyle({ backgroundColor: 'MediumVioletRed' });
 
   fireEvent.click(button);
 
-  expect(button).toHaveStyle({ backgroundColor: 'blue' });
+  expect(button).toHaveStyle({ backgroundColor: 'MidnightBlue' });
 
-  expect(button.textContent).toBe('Change to red');
+  expect(button.textContent).toBe('Change to MediumVioletRed');
 });
 
 test('initial conditions', () => {
   render(<App />);
 
-  const button = screen.getByRole('button', { name: 'Change to blue' });
+  const button = screen.getByRole('button', { name: 'Change to MidnightBlue' });
 
   expect(button).toBeEnabled();
 
@@ -31,7 +31,7 @@ test('initial conditions', () => {
 test('button toggles disabled on checkbox select', () => {
   render(<App />);
 
-  const button = screen.getByRole('button', { name: 'Change to blue' });
+  const button = screen.getByRole('button', { name: 'Change to MidnightBlue' });
 
   const checkbox = screen.getByRole('checkbox', { name: 'Disable button' });
 
@@ -50,11 +50,11 @@ test('button toggles disabled on checkbox select', () => {
 test('button turns grey when disabled', () => {
   render(<App />);
 
-  const button = screen.getByRole('button', { name: 'Change to blue' });
+  const button = screen.getByRole('button', { name: 'Change to MidnightBlue' });
 
   const checkbox = screen.getByRole('checkbox', { name: 'Disable button' });
 
-  expect(button).toHaveStyle({ backgroundColor: 'red' });
+  expect(button).toHaveStyle({ backgroundColor: 'MediumVioletRed' });
 
   fireEvent.click(checkbox);
 
@@ -62,11 +62,11 @@ test('button turns grey when disabled', () => {
 
   fireEvent.click(checkbox);
 
-  expect(button).toHaveStyle({ backgroundColor: 'red' });
+  expect(button).toHaveStyle({ backgroundColor: 'MediumVioletRed' });
 
   fireEvent.click(button);
 
-  expect(button).toHaveStyle({ backgroundColor: 'blue' });
+  expect(button).toHaveStyle({ backgroundColor: 'MidnightBlue' });
 
   fireEvent.click(checkbox);
 
@@ -74,7 +74,7 @@ test('button turns grey when disabled', () => {
 
   fireEvent.click(checkbox);
 
-  expect(button).toHaveStyle({ backgroundColor: 'blue' });
+  expect(button).toHaveStyle({ backgroundColor: 'MidnightBlue' });
 });
 
 // describe is a way of grouping tests
