@@ -39,3 +39,13 @@ The jest dom comes with create-react-app. Jest-dom imports the setupTests.js fil
 # Jest
 
 Jest is a test runner, there are many alternative runners (e.g. moca) but Jest is the recommended testing library for RTL. Jest has a global test method which takes two arguments, a string description and a function to run. A test is considered to have failed if any error is thrown whilst running function assertions. Assertions henceforth work by throwing errors when your expectation fails.
+
+# When to Unit Test
+
+RTL encourages function testing, this means we test functions rather than small units. In doing so we have to test the
+overall functionality in the same way a user would use our application. Sometimes, however, we want to test
+more complex code, code that does something which has many edge cases, or maybe we just want to be completely
+confident that a shared function always returns predictable values.
+Unit tests should be use in these cases, or in cases where we don't
+need to mount our component to testa  particular unit. Additionally, we
+can use units to determine what caused our functional tests to fail.
