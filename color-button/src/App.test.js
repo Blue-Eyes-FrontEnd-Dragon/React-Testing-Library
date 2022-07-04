@@ -65,4 +65,12 @@ test('button turns grey when disabled', () => {
   fireEvent.click(button);
 
   expect(button).toHaveStyle({ backgroundColor: 'blue' });
+
+  fireEvent.click(checkbox);
+
+  expect(button).toHaveStyle({ backgroundColor: 'grey' });
+
+  fireEvent.click(checkbox);
+
+  expect(button).toHaveStyle({ backgroundColor: 'blue' });
 });
