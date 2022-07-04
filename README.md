@@ -49,3 +49,11 @@ confident that a shared function always returns predictable values.
 Unit tests should be use in these cases, or in cases where we don't
 need to mount our component to testa  particular unit. Additionally, we
 can use units to determine what caused our functional tests to fail.
+
+# Plugins
+
+RTL plugins can be used to extend ESLint to enforce RTL best practices
+within your tests.
+
+[eslint-rtl](https://github.com/testing-library/eslint-plugin-testing-library)
+[eslint-jest-dom](https://github.com/testing-library/eslint-plugin-jest-dom)
