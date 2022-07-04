@@ -1,5 +1,5 @@
 import { render, screen, fireEvent } from '@testing-library/react';
-import { replaceCamleCaseWithSpaces } from './App';
+import { replaceCamelCaseWithSpaces } from './App';
 import App from './App';
 
 test('button turns blue when clicked', () => {
@@ -80,14 +80,14 @@ test('button turns grey when disabled', () => {
 // describe is a way of grouping tests
 describe('spaces before camel-case capital letters', () => {
   it('Works for no inner capital letters', () =>{
-    expect(replaceCamleCaseWithSpaces('Red')).toBe('Red');
+    expect(replaceCamelCaseWithSpaces('Red')).toBe('Red');
   });
 
   it('Works for one inner capital letter', () => {
-    expect(replaceCamleCaseWithSpaces('MidnightBlue')).toBe('Midnight Blue');
+    expect(replaceCamelCaseWithSpaces('MidnightBlue')).toBe('Midnight Blue');
   });
 
   it('Works for multiple capital letters', () => {
-    expect(replaceCamleCaseWithSpaces('MediumVioletRed')).toBe('Medium Violet Red');
+    expect(replaceCamelCaseWithSpaces('MediumVioletRed')).toBe('Medium Violet Red');
   });
 });

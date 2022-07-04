@@ -1,7 +1,7 @@
 import './App.css';
 import { useState } from 'react';
 
-export const replaceCamleCaseWithSpaces = camelCaseWord => camelCaseWord.replace(/\B([A-Z])\B/g, ' $1');
+export const replaceCamelCaseWithSpaces = camelCaseWord => camelCaseWord.replace(/\B([A-Z])\B/g, ' $1');
 
 const App = () => {
 
