@@ -1,7 +1,9 @@
 import './App.css';
 import { useState } from 'react';
 
-function App() {
+export const replaceCamleCaseWithSpaces = camelCaseWord => camelCaseWord.replace(/\B([A-Z])\B/g, ' $1');
+
+const App = () => {
 
   const [buttonColor, setButtonColor] = useState('red');
   const [disabled, setDisabled] = useState(false);

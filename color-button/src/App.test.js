@@ -1,4 +1,5 @@
 import { render, screen, fireEvent } from '@testing-library/react';
+import { replaceCamleCaseWithSpaces } from './App';
 import App from './App';
 
 test('button turns blue when clicked', () => {
@@ -45,6 +46,7 @@ test('button toggles disabled on checkbox select', () => {
   expect(button).toBeEnabled();
 });
 
+// it is an alias of test
 test('button turns grey when disabled', () => {
   render(<App />);
 
@@ -73,4 +75,19 @@ test('button turns grey when disabled', () => {
   fireEvent.click(checkbox);
 
   expect(button).toHaveStyle({ backgroundColor: 'blue' });
+});
+
+// describe is a way of grouping tests
+describe('spaces before camel-case capital letters', () => {
+  it('Works for no inner capital letters', () =>{
+    expect(replaceCamleCaseWithSpaces('Red')).toBe('Red');
+  });
+
+  it('Works for one inner capital letter', () => {
+    expect(replaceCamleCaseWithSpaces('MidnightBlue')).toBe('Midnight Blue');
+  });
+
+  it('Works for multiple capital letters', () => {
+    expect(replaceCamleCaseWithSpaces('MediumVioletRed')).toBe('Medium Violet Red');
+  });
 });
